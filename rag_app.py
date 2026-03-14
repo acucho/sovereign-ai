@@ -23,16 +23,16 @@ Settings.embed_model = OllamaEmbedding(model_name="nomic-embed-text")
 
 # Prompt explicito — le dice exactamente que usar el documento
 PROMPT_RAG = PromptTemplate(
-    "Eres un asistente medico especializado. "
-    "Usa UNICAMENTE la siguiente informacion del documento para responder. "
-    "Si la respuesta esta en el documento, respondela detalladamente en español. "
-    "Si genuinamente no esta en el documento, di: No encontre esa informacion en el documento.\n\n"
-    "Informacion del documento:\n"
+    "INSTRUCCION: Responde SOLO usando el texto del documento. "
+    "NO uses conocimiento externo. "
+    "Si la respuesta exacta esta en el documento, copiala textualmente. "
+    "Si no esta en el documento, responde solo: 'No esta en el documento.'\n\n"
+    "DOCUMENTO:\n"
     "---------------------\n"
     "{context_str}\n"
     "---------------------\n"
-    "Pregunta: {query_str}\n"
-    "Respuesta detallada en español:"
+    "PREGUNTA: {query_str}\n"
+    "RESPUESTA (solo del documento, en español):"
 )
 
 with st.sidebar:
