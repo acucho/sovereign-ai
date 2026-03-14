@@ -18,7 +18,7 @@ st.caption("Powered by IA local · Sus datos nunca salen de esta red · RAG acti
 # llama3.2:3b = 2 GB — suficiente para seguir instrucciones RAG correctamente
 # nomic-embed-text = 274 MB para buscar en documentos
 # Total RAM: ~2.3 GB — cabe perfectamente en tu PC
-Settings.llm = Ollama(model="llama3.2:3b", request_timeout=120.0)
+Settings.llm = Ollama(model="llama3.2:1b", request_timeout=120.0)
 Settings.embed_model = OllamaEmbedding(model_name="nomic-embed-text")
 
 # Prompt explicito — le dice exactamente que usar el documento
